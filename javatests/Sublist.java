@@ -7,7 +7,6 @@ import java.util.ArrayList;
  */
 class Sublist implements Cloneable {
     private double sum = 0.0;
-    private ArrayList<Double> originalObjects;
     private ArrayList<Double> indices;
 
     /**
@@ -17,9 +16,8 @@ class Sublist implements Cloneable {
      * @param orig ArrayList of Double objects
      */
     // constructor creates an empty Sublist (no indices)
-    public Sublist(ArrayList<Double> orig) {
+    public Sublist(ArrayList<Player> orig) {
         indices = new ArrayList<Double>();
-        originalObjects = orig;
         for (int i = 0; i < orig.size(); i++) {
             // need an if statement to check to see if there are null values in the subset
             indices.add((double) i);
