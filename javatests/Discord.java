@@ -10,7 +10,7 @@ public class Discord {
       playerList = fileReader.readFile(FILEPATH);
 
       for (int i = 0; i < playerList.size(); i++) {
-         System.out.println(playerList.get(i).toString());
+         System.out.println(playerList.get(i));
       }
    }
 }

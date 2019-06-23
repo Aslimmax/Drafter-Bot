@@ -1,3 +1,5 @@
-Relegate, Diamond
-Juvenes, Silver
-Soghoot, Platinum
+Relegate,Diamond
+Juvenes,Silver
+Soghoot,Platinum
+Flips,Platinum
+LeMadLad,Platinum

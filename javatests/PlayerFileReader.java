@@ -30,18 +30,18 @@ public class PlayerFileReader {
         try {
             Scanner sc = new Scanner(new FileReader(filePathInput));
             while (sc.hasNext()) {
-                playerName = sc.nextLine();
-                tempStringArray = playerName.split(",");
+                tempStringArray = sc.nextLine().split(",");
+                playerName = tempStringArray[0];
                 playerRank = tempStringArray[1];
                 returnPlayerList.add(new Player(playerName, playerRank));
             }
+            sc.close();
         }
         // check requirements for catch
         catch (FileNotFoundException e) {
             e.printStackTrace();
             returnPlayerList.clear();
         }
-        sc.close();
         return returnPlayerList;
     }
 }
