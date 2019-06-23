@@ -7,12 +7,12 @@ import java.util.Scanner;
  * An object of FileReader class reads the data of a text file passed
  * to the object and returns an ArrayList of Player objects
  */
-public class FileReader {
+public class PlayerFileReader {
 
     /**
      * Default constructor with no properties
      */
-    GroceriesFileReader() {
+    PlayerFileReader() {
 
     }
 
@@ -34,7 +34,7 @@ public class FileReader {
             while (sc.hasNext()) {
                 playerName = sc.nextLine();
                 tempStringArray = playerName.split(",");
-                playerRank = arrayOfGrocery[1];
+                playerRank = tempStringArray[1];
                 returnPlayerList.add(new Player(playerName, playerRank));
             }
         }

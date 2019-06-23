@@ -6,7 +6,12 @@ class Player {
 
     // overloaded constructor
     public Player(String name, String rank) { 
-        name = this.name;
-        rank = this.rank; 
+        this.name = name;
+        this.rank = rank;
+    }
+
+    @Override
+    public String toString() {
+        return (name + ", " + rank);
     }
 }

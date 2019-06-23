@@ -75,7 +75,7 @@ class Sublist implements Cloneable {
      * @return new Sublist with extra index added to the end of the list
      */
     Sublist addItem(int indexOfItemToAdd) {
-        Sublist tempSublist = new Sublist(new ArrayList<Double>());
+        Sublist tempSublist = new Sublist(new ArrayList<Player>());
         try {
             Sublist returnSublist = (Sublist) this.clone();
             double tempIndex = indexOfItemToAdd;
