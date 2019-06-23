@@ -1,13 +1,16 @@
+import java.util.ArrayList;
+
 public class Discord {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+   public static void main(String[] args) {
+      final String FILEPATH = "resources/playerlist.txt";
+      
+      ArrayList<Player> playerList;
+      PlayerFileReader fileReader = new PlayerFileReader();
 
-        final String FILEPATH = "resources/playerlist.txt";
+      playerList = fileReader.readFile(FILEPATH);
 
-        PlayerFileReader listOfPlayers = new PlayerFileReader();
-
-        Player playerOne = new Player("Relegate", "Diamond");
-        System.out.println(playerOne.toString());
-
-    }
+      for (int i = 0; i < playerList.size(); i++) {
+         System.out.println(playerList.get(i).toString());
+      }
+   }
 }

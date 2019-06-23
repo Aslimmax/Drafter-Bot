@@ -12,9 +12,7 @@ public class PlayerFileReader {
     /**
      * Default constructor with no properties
      */
-    PlayerFileReader() {
-
-    }
+    PlayerFileReader() { }
 
     /**
      * ArrayList of Player objects that stores the player's name and information
