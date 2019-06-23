@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 /**
  * An object of type Sublist class creates an object from an ArrayList of Double
  * objects that contains the indicies of the prices of groceries (Part I) and
@@ -51,7 +50,6 @@ class Sublist implements Cloneable {
             int tempIntIndex = (int) tempDoubleIndex;
             this.sum += masterSet.get(tempIntIndex);
         }
-
         return sum;
     }
 
