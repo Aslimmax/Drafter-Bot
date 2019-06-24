@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 /**
- * An object of type Sublist class creates an object from an ArrayList of Double
- * objects that contains the indicies of the prices of groceries (Part I) and
- * the indices of the time durations of songs (Part II) from text file
- * (groceries.txt) and a JSON file (music_genre_subset.json) respectively.
+ * An object of type Sublist class creates an object 
  */
 class Sublist implements Cloneable {
     private double sum = 0.0;
