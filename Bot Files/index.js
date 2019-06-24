@@ -23,7 +23,7 @@ client.on('message', msg => {
     }
     else if (msg.content === `${prefix}server`) {
         msg.channel.send(`This server's name is: ${msg.guild.name}`
-        + `\nNumber of members in server: ${msg.guild.ownerID}`); 
+        + `\nNumber of members in server: ${msg.guild.memberCount}`); 
     }
 });
 

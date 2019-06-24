@@ -1,3 +1,7 @@
+/**
+ * An object of class Player will create an object with properties username, 
+ * rank, and rankValue that will be used to identify a Player. 
+ */
 class Player {
     // class variables
     private int rankValue;
@@ -13,7 +17,12 @@ class Player {
     public static final int MIN_RANK_VALUE = 1;
     public static final int MAX_RANK_VALUE = 7;
 
-    // overloaded constructor
+    /**
+     * 2-parameter overloaded constructor that sets the Player's username, rank,
+     * and rank value
+     * @param username          Player's username
+     * @param rank              Player's rank
+     */
     public Player(String username, String rank) {
         if (!setUsername(username)) {
             this.username = DEFAULT_USERNAME;
@@ -26,17 +35,38 @@ class Player {
         }
     }
 
-    // Default constructor
+    /**
+     * Default constructor that sets the Player's username and rank to default 
+     * values defined in constants 
+     */
     public Player() {
         this(DEFAULT_USERNAME, DEFAULT_RANK);
     }
 
-    // Accessors
+    /**
+     * Accessor for the Player's rank value
+     * @return
+     */
     public int getRankValue() { return rankValue; }
+
+    /**
+     * Accessor for the Player's username
+     * @return
+     */
+    
     public String getName() { return username; }
+
+    /**
+     * Accessor for the Player's rank
+     * @return
+     */
     public String getRank() { return rank; }
 
-    // Mutators
+    /**
+     * Mutator that sets the value of the Player's username
+     * @param name          Player's username
+     * @return              Boolean value
+     */
     public boolean setUsername(String name) {
         if (!validUsername(name)) {
             return false;
@@ -45,6 +75,11 @@ class Player {
         return true;
     }
 
+    /**
+     * Mutator that sets the value of the Player's rank
+     * @param rank          Player's rank
+     * @return              Boolen value
+     */
     public boolean setRank(String rank) {
         if (!validRank(rank)) {
             return false;
@@ -53,6 +88,12 @@ class Player {
         return true;
     }
 
+    /**
+     * Mutator that sets the value of the Player's rank value based on the 
+     * Player's rank
+     * @param rank          Player's rank
+     * @return              Boolean value
+     */
     public boolean setRankValue(String rank) {
         if (!validRank(rank)) {
             return false;
@@ -65,12 +106,21 @@ class Player {
         return true;
     }
 
+    /**
+     * Override method of toString that provides a formatted form of the 
+     * Player's username, rank, and rank value
+     * @return          Formatted return String
+     */
     @Override
     public String toString() {
         return (username + ", " + rank + ", " + rankValue);
     }
 
-    // Helper methods
+    /**
+     * Private helper function that determines whether username is valid
+     * @param name      Player's username
+     * @return          Boolean value
+     */
     private boolean validUsername(String name) {
         if (name.length() >= MIN_USERNAME_LENGTH
                 && name.length() <= MAX_USERNAME_LENGTH) {
@@ -79,6 +129,12 @@ class Player {
         return false;
     }
 
+    /**
+     * Private helper function that determines whether the Player's rank is 
+     * valid
+     * @param rank      Player's rank
+     * @return          Boolean value
+     */
     private boolean validRank(String rank) {
         if (determineRankValue(rank) >= MIN_RANK_VALUE &&
                 determineRankValue(rank) <= MAX_RANK_VALUE) {
@@ -87,6 +143,19 @@ class Player {
         return false;
     }
 
+    /**
+     * Private helper function that determines whether rank is valid 
+     * and assign respective rank value depending on rank.
+     * I = Iron = 1
+     * B = Bronze = 2
+     * S = Silver = 3
+     * G = Gold = 4
+     * P = Platinum = 5
+     * D = Diamond = 6
+     * M = Master = 7
+     * @param rank      Player's rank
+     * @return          Rank value depending on Player's rank
+     */
     private int determineRankValue(String rank) {
         char rankLetter = rank.toUpperCase().charAt(0);
         switch(rankLetter) {
