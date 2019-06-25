@@ -1,23 +1,23 @@
 import java.util.ArrayList;
 /**
- * An object of type Sublist class creates an object 
+ * 
  */
 class Sublist implements Cloneable {
     private double sum = 0.0;
     private ArrayList<Double> indices;
+    private ArrayList<Player> players;
 
     /**
-     * Default constructor that initializes a Sublist object based on an ArrayList
-     * of Double object's original values and the indicies of those values
      * 
-     * @param orig ArrayList of Double objects
+     * @param orig ArrayList of Player objects
      */
-    // constructor creates an empty Sublist (no indices)
     public Sublist(ArrayList<Player> orig) {
         indices = new ArrayList<Double>();
+        players = new ArrayList<Player>();
         for (int i = 0; i < orig.size(); i++) {
             // need an if statement to check to see if there are null values in the subset
             indices.add((double) i);
+            players.add(orig.get(i));
         }
     }
 
@@ -31,21 +31,16 @@ class Sublist implements Cloneable {
     }
 
     /**
-     * value of the total sum of all the objects in a subset based on the masterSet
-     * that contains all/some of the elements comprised by the subset
-     * 
-     * @param masterSet ArrayList of Double objects that holds all the elements in a
-     *                  subset
-     * @return double of a subset's sum
+     * @param masterSet 
+     * @return
      */
-    public double getSum(ArrayList<Double> masterSet) {
-        sum = 0;
+    public double getSum(ArrayList<Player> masterSet) {
         for (int i = 0; i < this.indices.size(); i++) {
             double tempDoubleIndex = this.indices.get(i);
             int tempIntIndex = (int) tempDoubleIndex;
-            this.sum += masterSet.get(tempIntIndex);
+            this.sum += masterSet.get(tempIntIndex).getRankValue();
         }
-        return sum;
+        return this.sum;
     }
 
     /**

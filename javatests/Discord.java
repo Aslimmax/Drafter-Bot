@@ -12,5 +12,8 @@ public class Discord {
       for (int i = 0; i < playerList.size(); i++) {
          System.out.println(playerList.get(i));
       }
+
+      Sublist testSublist = new Sublist(playerList);
+      System.out.println(testSublist.getSum(playerList));
    }
 }
