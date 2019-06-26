@@ -3,7 +3,7 @@ import java.util.ArrayList;
  * 
  */
 class Sublist implements Cloneable {
-    private double sum = 0.0;
+    private double rankSum = 0.0;
     private ArrayList<Double> indices;
     private ArrayList<Player> players;
 
@@ -30,17 +30,21 @@ class Sublist implements Cloneable {
         return this.indices;
     }
 
+    public ArrayList<Player> getPlayers() {
+        return this.players;
+    }
+
     /**
      * @param masterSet 
      * @return
      */
-    public double getSum(ArrayList<Player> masterSet) {
+    public double getRankValueSum(ArrayList<Player> masterSet) {
         for (int i = 0; i < this.indices.size(); i++) {
             double tempDoubleIndex = this.indices.get(i);
             int tempIntIndex = (int) tempDoubleIndex;
-            this.sum += masterSet.get(tempIntIndex).getRankValue();
+            this.rankSum += masterSet.get(tempIntIndex).getRankValue();
         }
-        return this.sum;
+        return this.rankSum;
     }
 
     /**
@@ -56,6 +60,7 @@ class Sublist implements Cloneable {
         Sublist newObject = (Sublist) super.clone();
         // deep copy
         newObject.indices = (ArrayList<Double>) indices.clone();
+        newObject.players = (ArrayList<Player>) players.clone();
 
         return newObject;
     }
@@ -66,12 +71,12 @@ class Sublist implements Cloneable {
      * @param indexOfItemToAdd index that is appended to Sublist
      * @return new Sublist with extra index added to the end of the list
      */
-    Sublist addItem(int indexOfItemToAdd) {
+    Sublist addItem(Player playerToAdd) {
         Sublist tempSublist = new Sublist(new ArrayList<Player>());
         try {
             Sublist returnSublist = (Sublist) this.clone();
-            double tempIndex = indexOfItemToAdd;
-            returnSublist.indices.add(tempIndex);
+            Player tempIndex = playerToAdd;
+            returnSublist.players.add(tempIndex);
             tempSublist = returnSublist;
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();

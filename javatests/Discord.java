@@ -14,6 +14,6 @@ public class Discord {
       }
 
       Sublist testSublist = new Sublist(playerList);
-      System.out.println(testSublist.getSum(playerList));
+      System.out.println(testSublist.getRankValueSum(playerList));
    }
 }
