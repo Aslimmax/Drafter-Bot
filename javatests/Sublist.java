@@ -39,10 +39,9 @@ class Sublist implements Cloneable {
      * @return
      */
     public double getRankValueSum(ArrayList<Player> masterSet) {
-        for (int i = 0; i < this.indices.size(); i++) {
-            double tempDoubleIndex = this.indices.get(i);
-            int tempIntIndex = (int) tempDoubleIndex;
-            this.rankSum += masterSet.get(tempIntIndex).getRankValue();
+        this.rankSum = 0;
+        for (int i = 0; i < this.players.size(); i++) {
+            this.rankSum += masterSet.get(i).getRankValue();
         }
         return this.rankSum;
     }
@@ -65,12 +64,6 @@ class Sublist implements Cloneable {
         return newObject;
     }
 
-    /**
-     * Sublist that is generated from appending a new index to a reference sublist
-     * 
-     * @param indexOfItemToAdd index that is appended to Sublist
-     * @return new Sublist with extra index added to the end of the list
-     */
     Sublist addItem(Player playerToAdd) {
         Sublist tempSublist = new Sublist(new ArrayList<Player>());
         try {

@@ -3,11 +3,12 @@ import java.util.ArrayList;
 public class Discord {
    public static void main(String[] args) {
       final String FILEPATH = "resources/playerlist.txt";
-      
-      ArrayList<Player> playerList;
+
+      ArrayList<Player> playerList, newPlayer;
       PlayerFileReader fileReader = new PlayerFileReader();
 
       playerList = fileReader.readFile(FILEPATH);
+      newPlayer = fileReader.readFile("resources/newplayer.txt");
 
       for (int i = 0; i < playerList.size(); i++) {
          System.out.println(playerList.get(i));
@@ -15,5 +16,8 @@ public class Discord {
 
       Sublist testSublist = new Sublist(playerList);
       System.out.println(testSublist.getRankValueSum(playerList));
+
+      testSublist = testSublist.addItem(newPlayer.get(0));
+      System.out.println(testSublist.getRankValueSum(testSublist.getPlayers()));
    }
 }
