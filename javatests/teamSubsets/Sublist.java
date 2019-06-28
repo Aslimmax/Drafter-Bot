@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * 
  */
-class Sublist implements Cloneable {
+public class Sublist implements Cloneable {
     private double rankSum = 0.0;
     private ArrayList<Double> indices;
     private ArrayList<Player> players;
@@ -66,7 +66,7 @@ class Sublist implements Cloneable {
         return newObject;
     }
 
-    Sublist addItem(Player playerToAdd) {
+    public Sublist addItem(Player playerToAdd) {
         Sublist tempSublist = new Sublist(new ArrayList<Player>());
         try {
             Sublist returnSublist = (Sublist) this.clone();

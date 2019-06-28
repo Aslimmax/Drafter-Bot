@@ -4,7 +4,7 @@ package teamSubsets;
  * An object of class Player will create an object with properties username,
  * rank, and rankValue that will be used to identify a Player.
  */
-class Player {
+public class Player {
     // class variables
     private int rankValue;
     private String username;

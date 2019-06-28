@@ -2,6 +2,9 @@ package main;
 
 import java.util.ArrayList;
 
+import teamSubsets.*;
+import lazyTrees.*;
+
 public class Discord {
     public static void main(String[] args) {
         final String FILEPATH = "resources/playerlist.txt";

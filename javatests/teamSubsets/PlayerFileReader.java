@@ -1,4 +1,4 @@
-package testSubsets;
+package teamSubsets;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,7 +14,7 @@ public class PlayerFileReader {
     /**
      * Default constructor with no properties
      */
-    PlayerFileReader() { }
+    public PlayerFileReader() { }
 
     /**
      * ArrayList of Player objects that stores the player's name and information
