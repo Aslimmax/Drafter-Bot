@@ -2,17 +2,17 @@ import java.util.ArrayList;
 
 public class SubsetSum {
 
-	public static ArrayList<Double> generateTeams(ArrayList<Player> playerList) {
+	public static ArrayList<Sublist> generateTeams(ArrayList<Player> playerList) {
 		ArrayList<Sublist> subsetCollection = generateSubsetCollection(playerList);
 
 		if (subsetCollection == null) {
-			return playerList;
+			return null;
 		} else {
-			return generateMasterArrayList(playerList);
+			return generateMasterArrayList(subsetCollection);
 		}
 	}
 
-	private static ArrayList<Sublist> generateSubsetCollection (ArrayList<Player> playerList) {
+	public static ArrayList<Sublist> generateSubsetCollection (ArrayList<Player> playerList) {
 		ArrayList<Sublist> subsetCollection = new ArrayList<Sublist>();
 		ArrayList<Sublist> modifiedSubsetCollection = new ArrayList<Sublist>();
 		double newRankValueSum = 0.0;
@@ -37,16 +37,16 @@ public class SubsetSum {
 		return subsetCollection;
 	}
 
-	private static ArrayList<Player> generateMasterArrayList(ArrayList<Player> playerList) {
+	private static ArrayList<Sublist> generateMasterArrayList(ArrayList<Sublist> playerList) {
 		ArrayList<Sublist> optimizedCollection = new ArrayList<Sublist>();
 		ArrayList<Sublist> returnArrayList = new ArrayList<Sublist>();
 		int requiredTeamSize = 5;
 
 		for (int i = 0; i < playerList.size(); i++) {
-			int teamSize = playerList.size();
+			int teamSize = playerList.get(i).getPlayers().size();
 			
 			if (teamSize == 5) {
-				optimizedCollection.add(new Sublist(playerList.get(i)));
+				optimizedCollection.add(playerList.get(i));
 			}
 		}
 
