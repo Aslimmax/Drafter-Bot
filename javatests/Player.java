@@ -35,13 +35,13 @@ class Player {
         }
     }
 
-    /**
-     * Default constructor that sets the Player's username and rank to default 
-     * values defined in constants 
-     */
-    public Player() {
-        this(DEFAULT_USERNAME, DEFAULT_RANK);
-    }
+    // /**
+    //  * Default constructor that sets the Player's username and rank to default 
+    //  * values defined in constants 
+    //  */
+    // public Player() {
+    //     this(DEFAULT_USERNAME, DEFAULT_RANK);
+    // }
 
     /**
      * Accessor for the Player's rank value
