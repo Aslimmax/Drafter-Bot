@@ -1,6 +1,8 @@
+package teamSubsets;
+
 /**
- * An object of class Player will create an object with properties username, 
- * rank, and rankValue that will be used to identify a Player. 
+ * An object of class Player will create an object with properties username,
+ * rank, and rankValue that will be used to identify a Player.
  */
 class Player {
     // class variables
