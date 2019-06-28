@@ -21,8 +21,7 @@ public class Discord {
         System.out.println(testSublist.getRankValueSum(testSublist.getPlayers()));
 
         SubsetSum exampleSum = new SubsetSum();
-        ArrayList<Sublist> test =
-                exampleSum.generateSubsetCollection(playerList);
+        ArrayList<Sublist> test = generateTeams(playerList);
         for (int i = 0; i < test.size(); i++) {
            System.out.println("{");
            System.out.println(test.get(i).getPlayers().toString());

@@ -84,7 +84,7 @@ class Player {
         if (!validRank(rank)) {
             return false;
         }
-        this.rank = rank;
+        this.rank = determineRank(rank);
         return true;
     }
 
@@ -143,6 +143,28 @@ class Player {
         return false;
     }
 
+    private String determineRank(String rank) {
+        char rankLetter = rank.toUpperCase().charAt(0);
+
+        switch(rankLetter) {
+            case 'I':
+                return "Iron";
+            case 'B':
+                return "Bronze";
+            case 'S':
+                return "Silver";
+            case 'G':
+                return "Gold";
+            case 'P':
+                return "Platinum";
+            case 'D':
+                return "Diamond";
+            case 'M':
+                return "Master";
+            default:
+                return "Null";
+        }
+    }
     /**
      * Private helper function that determines whether rank is valid 
      * and assign respective rank value depending on rank.
@@ -158,6 +180,7 @@ class Player {
      */
     private int determineRankValue(String rank) {
         char rankLetter = rank.toUpperCase().charAt(0);
+
         switch(rankLetter) {
             case 'I':
                 return 1;

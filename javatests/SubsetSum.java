@@ -2,17 +2,17 @@ import java.util.ArrayList;
 
 public class SubsetSum {
 
-	// public static ArrayList<Double> findSubset(ArrayList<Double> playerList) {
-	// 	ArrayList<Sublist> subsetCollection = generateSubsetCollection(playerList);
+	public static ArrayList<Double> generateTeams(ArrayList<Player> playerList) {
+		ArrayList<Sublist> subsetCollection = generateSubsetCollection(playerList);
 
-	// 	if (subsetCollection == null) {
-	// 		return userShoppingList;
-	// 	} else {
-	// 		return generateMasterArrayList(userShoppingList, subsetCollection);
-	// 	}
-	// }
+		if (subsetCollection == null) {
+			return playerList;
+		} else {
+			return generateMasterArrayList(playerList);
+		}
+	}
 
-	public ArrayList<Sublist> generateSubsetCollection (ArrayList<Player> playerList) {
+	private static ArrayList<Sublist> generateSubsetCollection (ArrayList<Player> playerList) {
 		ArrayList<Sublist> subsetCollection = new ArrayList<Sublist>();
 		ArrayList<Sublist> modifiedSubsetCollection = new ArrayList<Sublist>();
 		double newRankValueSum = 0.0;
@@ -35,5 +35,21 @@ public class SubsetSum {
 			modifiedSubsetCollection.addAll(subsetCollection);
 		}
 		return subsetCollection;
+	}
+
+	private static ArrayList<Player> generateMasterArrayList(ArrayList<Player> playerList) {
+		ArrayList<Sublist> optimizedCollection = new ArrayList<Sublist>();
+		ArrayList<Sublist> returnArrayList = new ArrayList<Sublist>();
+		int requiredTeamSize = 5;
+
+		for (int i = 0; i < playerList.size(); i++) {
+			int teamSize = playerList.size();
+			
+			if (teamSize == 5) {
+				optimizedCollection.add(new Sublist(playerList.get(i)));
+			}
+		}
+
+		return optimizedCollection;
 	}
 }
