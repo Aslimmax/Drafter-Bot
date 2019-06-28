@@ -10,20 +10,36 @@ client.once("ready", () => {
 });
 
 // Listener event
-client.on('message', msg => {
-    if (msg.content.startsWith(`${prefix}ping`)) {
-        msg.channel.send("Pong");
+client.on('message', message => {
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+
+    if (message.content.startsWith(`${prefix}ping`)) {
+        message.channel.send("Pong");
     }
+    else if (command === 'args-info') {
+        if (!args.length) {
+            return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+        }
+        else if (args[0] === 'foo') {
+            return message.channel.send('bar');
+        }
+
+        message.channel.send(`Command name: ${command}\nArguments: ${args}`);
+    }
+    
     // don't worry about startsWith yet
-    else if (msg.content.startsWith(`${prefix}help menu`)) {
-        msg.channel.send("Help Menu 2");
+    else if (message.content.startsWith(`${prefix}help menu`)) {
+        message.channel.send("Help Menu 2");
     }
-    else if (msg.content.startsWith(`${prefix}help`)) {
-        msg.channel.send("Help Menu:");
+    else if (message.content.startsWith(`${prefix}help`)) {
+        message.channel.send("Help Menu:");
     }
-    else if (msg.content === `${prefix}server`) {
-        msg.channel.send(`This server's name is: ${msg.guild.name}`
-        + `\nNumber of members in server: ${msg.guild.memberCount}`); 
+    else if (message.content === `${prefix}server`) {
+        message.channel.send(`This server's name is: ${message.guild.name}`
+        + `\nNumber of members in server: ${message.guild.memberCount}`); 
     }
 });
 
