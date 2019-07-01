@@ -48,6 +48,14 @@ public class Sublist implements Cloneable {
         return this.rankSum;
     }
 
+    public double getRankValueSum() {
+        this.rankSum = 0;
+        for (int i = 0; i < this.players.size(); i++) {
+            this.rankSum += players.get(i).getRankValue();
+        }
+        return this.rankSum;
+    }
+
     /**
      * Object that clones the properties and values of an object into a new object
      * 
