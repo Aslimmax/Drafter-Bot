@@ -1,19 +1,18 @@
 package lazyTrees;
 
 import java.util.ArrayList;
-
 import teamSubsets.Sublist;
 
-public class Team implements Comparable<Team> {
-    // the name of the item
+public class Team {
     private ArrayList<Sublist> team;
-
-    // the count of this item
+    // the number of teams with the same rank value
     private int numTeams;
+    private int rankValue;
 
     public Team(Sublist players) {
         team.add(players);
         this.numTeams = 1;
+        rankValue = (int) team.get(0).getRankValueSum();
     }
 
     public void incrementCount() {
@@ -32,9 +31,8 @@ public class Team implements Comparable<Team> {
         return numTeams;
     }
 
-    @Override
-    public int compareTo(Team other) {
-        return 0;
+    public boolean compareTo(Team other) {
+        return this.rankValue == other.rankValue;
     };
 
     public String toString() {
