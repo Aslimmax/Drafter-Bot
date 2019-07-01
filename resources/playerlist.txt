@@ -8,9 +8,3 @@ wilson,gold
 franz,gold
 armon,plat
 calvin,silver
-
-[noodle, Gold, 4, wilson, Gold, 4, franz, Gold, 4, poptart, plat, 5, calvin,
-Silver, 3]
-
-[emily, Gold, 4, optimum, Gold, 4, Relegate, Diamond, 6, franz, Gold, 4, armon,
-Platinum, 5]

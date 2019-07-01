@@ -18,11 +18,11 @@ public class SubsetSum {
 		ArrayList<Sublist> subsetCollection = new ArrayList<Sublist>();
 		ArrayList<Sublist> modifiedSubsetCollection = new ArrayList<Sublist>();
 
-		// initialize collections with empty set (sum of empty set = 0)
+		// initialize collections witSh empty set (sum of empty set = 0)
 		subsetCollection.add(new Sublist(new ArrayList<Player>()));
         modifiedSubsetCollection.add(new Sublist(new ArrayList<Player>()));
 		
-		// i represents index of the value in teh list
+		// i represents index of the value in the list
 		for (int i = 0; i < playerList.size(); i++) {
 			// k represents the index of the sublist, L, in subsetCollection
 			for (int k = 0; k < subsetCollection.size(); k++) {
