@@ -1,7 +1,6 @@
-package lazyTrees;
+package teamSubsets;
 
 import java.util.ArrayList;
-import teamSubsets.Sublist;
 
 public class Team implements Comparable<Team> {
     private ArrayList<Sublist> team;
@@ -10,6 +9,7 @@ public class Team implements Comparable<Team> {
     private int rankValue;
 
     public Team(Sublist players) {
+        team = new ArrayList<Sublist>();
         team.add(players);
         this.numTeams = 1;
         rankValue = (int) team.get(0).getRankValueSum();
@@ -42,6 +42,8 @@ public class Team implements Comparable<Team> {
 
     @Override
     public int compareTo(Team other) {
-        return 0;
+        String thisRankValue = String.valueOf(rankValue);
+        String otherRankValue = String.valueOf(other.rankValue);
+        return thisRankValue.compareToIgnoreCase(otherRankValue);
     }
 }
