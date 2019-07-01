@@ -17,7 +17,6 @@ public class SubsetSum {
 	public static ArrayList<Sublist> generateSubsetCollection (ArrayList<Player> playerList) {
 		ArrayList<Sublist> subsetCollection = new ArrayList<Sublist>();
 		ArrayList<Sublist> modifiedSubsetCollection = new ArrayList<Sublist>();
-		double newRankValueSum = 0.0;
 
 		// initialize collections with empty set (sum of empty set = 0)
 		subsetCollection.add(new Sublist(new ArrayList<Player>()));
@@ -27,8 +26,6 @@ public class SubsetSum {
 		for (int i = 0; i < playerList.size(); i++) {
 			// k represents the index of the sublist, L, in subsetCollection
 			for (int k = 0; k < subsetCollection.size(); k++) {
-				newRankValueSum =
-                        modifiedSubsetCollection.get(k).getRankValueSum(playerList) + playerList.get(i).getRankValue();
 				modifiedSubsetCollection.add(modifiedSubsetCollection.get(k).addItem(playerList.get(i)));
 			}
 			subsetCollection.clear();
@@ -42,12 +39,12 @@ public class SubsetSum {
 	private static ArrayList<Sublist> generateMasterArrayList(ArrayList<Sublist> playerList) {
 		ArrayList<Sublist> optimizedCollection = new ArrayList<Sublist>();
 		ArrayList<Sublist> returnArrayList = new ArrayList<Sublist>();
-		int requiredTeamSize = 5;
+		final int requiredTeamSize = 5;
 
 		for (int i = 0; i < playerList.size(); i++) {
 			int teamSize = playerList.get(i).getPlayers().size();
 			
-			if (teamSize == 5) {
+			if (teamSize == requiredTeamSize) {
 				optimizedCollection.add(playerList.get(i));
 			}
 		}
