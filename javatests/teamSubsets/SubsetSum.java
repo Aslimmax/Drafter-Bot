@@ -2,7 +2,16 @@ package teamSubsets;
 
 import java.util.ArrayList;
 
+import lazyTrees.LazySearchTree;
+import lazyTrees.Team;
+
 public class SubsetSum {
+
+    private LazySearchTree<Team> spreadOfTeamRankValues;
+
+    public SubsetSum() {
+        spreadOfTeamRankValues = new LazySearchTree<Team>();
+    }
 
 	public static ArrayList<Sublist> generateTeams(ArrayList<Player> playerList) {
 		ArrayList<Sublist> subsetCollection = generateSubsetCollection(playerList);
@@ -45,7 +54,9 @@ public class SubsetSum {
 			int teamSize = playerList.get(i).getPlayers().size();
 			
 			if (teamSize == requiredTeamSize) {
-				optimizedCollection.add(playerList.get(i));
+                optimizedCollection.add(playerList.get(i));
+
+                Team temp = new Team(playerList.get(i));
 			}
 		}
 

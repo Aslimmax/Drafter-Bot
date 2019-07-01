@@ -3,7 +3,7 @@ package lazyTrees;
 import java.util.ArrayList;
 import teamSubsets.Sublist;
 
-public class Team {
+public class Team implements Comparable<Team> {
     private ArrayList<Sublist> team;
     // the number of teams with the same rank value
     private int numTeams;
@@ -31,12 +31,17 @@ public class Team {
         return numTeams;
     }
 
-    public boolean compareTo(Team other) {
+    public boolean compareRankValues(Team other) {
         return this.rankValue == other.rankValue;
     };
 
     public String toString() {
         return "Number of teams with Rank Value "
                 + team.get(0).getRankValueSum() + ": " + numTeams;
+    }
+
+    @Override
+    public int compareTo(Team other) {
+        return 0;
     }
 }
