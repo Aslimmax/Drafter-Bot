@@ -16,7 +16,7 @@ public class SubsetSum {
         }
     }
 
-    public static ArrayList<Sublist> generateSubsetCollection(ArrayList<Player> playerList) {
+    private static ArrayList<Sublist> generateSubsetCollection(ArrayList<Player> playerList) {
         ArrayList<Sublist> subsetCollection = new ArrayList<Sublist>();
         ArrayList<Sublist> modifiedSubsetCollection = new ArrayList<Sublist>();
 
