@@ -38,8 +38,8 @@ public class Player {
     }
 
     /**
-     * Default constructor that sets the Player's username and rank to default 
-     * values defined in constants 
+     * Default constructor that sets the Player's username and rank to default
+     * values defined in constants
      */
     public Player() {
         this(DEFAULT_USERNAME, DEFAULT_RANK);
@@ -47,27 +47,27 @@ public class Player {
 
     /**
      * Accessor for the Player's rank value
-     * @return
+     * @return          Integer rank value (criteria defined in
+     *                  determineRankValue method)
      */
     public int getRankValue() { return rankValue; }
 
     /**
      * Accessor for the Player's username
-     * @return
+     * @return          Player's username
      */
-    
     public String getName() { return username; }
 
     /**
      * Accessor for the Player's rank
-     * @return
+     * @return                  Player's rank
      */
     public String getRank() { return rank; }
 
     /**
      * Mutator that sets the value of the Player's username
-     * @param name          Player's username
-     * @return              Boolean value
+     * @param name      Player's username
+     * @return          Boolean value
      */
     public boolean setUsername(String name) {
         if (!validUsername(name)) {
@@ -145,6 +145,12 @@ public class Player {
         return false;
     }
 
+    /**
+     * Private helper function that determines the rank of the Player and
+     * formats the rank.
+     * @param rank      Player's rank
+     * @return          Formatted rank String
+     */
     private String determineRank(String rank) {
         char rankLetter = rank.toUpperCase().charAt(0);
 

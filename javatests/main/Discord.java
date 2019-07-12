@@ -48,7 +48,7 @@ public class Discord {
 
         ArrayList<Sublist> teams = SubsetSum.generateTeams(playerList);
         for (int i = 0; i < teams.size(); i++) {
-            System.out.println(teams.get(i).getPlayers().toString());
+            System.out.println(teams.get(i).displayTeams(i + 1));
         }
     }
 }
