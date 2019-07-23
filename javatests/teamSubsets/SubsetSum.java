@@ -50,7 +50,7 @@ public class SubsetSum {
     }
 
     /**
-     * Private helper method that genreates the "Master ArrayList", which is all teams of 5 players from
+     * Private helper method that generates the "Master ArrayList", which is all teams of 5 players from
      * generateSubsetCollection()
      * @param playerList        ArrayList of Players
      * @return                  ArrayList of Sublists of all teams of 5
