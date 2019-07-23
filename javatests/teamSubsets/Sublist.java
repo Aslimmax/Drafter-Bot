@@ -28,13 +28,6 @@ public class Sublist implements Cloneable {
         return this.players;
     }
 
-//    public double getRankValueSum(ArrayList<Player> masterSet) {
-//        this.rankSum = 0;
-//        for (int i = 0; i < this.players.size(); i++) {
-//            this.rankSum += masterSet.get(i).getRankValue();
-//        }
-//        return this.rankSum;
-//    }
 
     /**
      * Sums the rank value of all the Player's in a Sublist
