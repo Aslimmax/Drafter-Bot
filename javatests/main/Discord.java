@@ -1,9 +1,13 @@
 package main;
 
 import java.util.ArrayList;
-
 import teamSubsets.*;
 
+/**
+ * Include program description HERE...
+ *
+ * @author Andrew Lim
+ */
 public class Discord {
     public static void main(String[] args) {
         final String FILEPATH = "resources/playerlist.txt";
