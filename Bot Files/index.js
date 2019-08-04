@@ -35,7 +35,10 @@ client.on('message', message => {
         message.channel.send("Help Menu 2");
     }
     else if (message.content.startsWith(`${prefix}help`)) {
-        message.channel.send("Help Menu:");
+        message.channel.send('Help Menu: ' 
+        + '\n1. First item'
+        + '\n2. Second item'
+        + '\n3. Third item');
     }
     else if (message.content === `${prefix}server`) {
         message.channel.send(`This server's name is: ${message.guild.name}`
