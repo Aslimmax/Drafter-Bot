@@ -8,3 +8,4 @@ wilson,gold
 franz,gold
 armon,plat
 calvin,silver
+danny, silver
