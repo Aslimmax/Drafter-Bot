@@ -1,5 +1,3 @@
-// https://discordapp.com/oauth2/authorize?client_id=591814024883339272&scope=bot
-
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
 const client = new Discord.Client();
